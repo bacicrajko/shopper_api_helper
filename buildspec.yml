@@ -17,7 +17,7 @@ phases:
       - echo Pushing the Docker image...
       - IMAGE=$AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/$IMAGE_REPO_NAME:$CODEBUILD_BUILD_NUMBER
       - docker push $IMAGE
-      - printf '[{"name":"testService-test","imageUri":"%s"}]' $IMAGE > imagedefinitions.json
+      - printf '[{"name":"testService-td","imageUri":"%s"}]' $IMAGE > imagedefinitions.json
 artifacts:
   files:
     - imagedefinitions.json
